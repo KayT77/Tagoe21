@@ -1,5 +1,6 @@
 
 import random
+import validation
 import  datetime
 now = datetime.datetime.now()
 
@@ -42,19 +43,32 @@ def login():
     
     print("*******Login*******")
 
-    accountNumberFromUser = int(input("What is your account number? \n"))
-    password = input ("What is Your Password? \n")
+    accountNumberFromUser = (input("What is your Account Number? \n"))
 
-    for accountNumber,userDetails in database.items():
-        if (accountNumber == accountNumberFromUser):
-            if (userDetails[3] == password):
-                bankOperations(userDetails)  
-                
+    isValidAccountNumber = validation.accountNumberValidation(accountNumberFromUser)
 
-    print('Invalid Account or Password')
-    login()
+    if isValidAccountNumber:
+
+        password = input("What is your password? \n")
+
+
+        for accountNumberFromUser,userDetails in database.items():
+            if (accountNumber == accountNumberFromUser):
+                if (userDetails[3] == password):
+                    bankOperations(userDetails)
     
-    
+   
+
+        print("Invalid account or password")
+        login() 
+
+    else:
+        init()
+ 
+
+
+
+
 
 def register():
     
