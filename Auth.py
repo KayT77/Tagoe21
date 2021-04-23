@@ -1,4 +1,3 @@
-
 import random
 import validation
 import  datetime
@@ -14,12 +13,11 @@ allowedUserDictionary = {
     'Claire' : 'gama'
 }
 
-database_user = {
+databaseUser = {
     'Alvin': 'alpha',
     'Kelvin' : 'beta',
     'Claire' : 'gama'
 }
-
 
 database = {}  #dictionary
 
@@ -39,36 +37,35 @@ def init ():
            print("You have selceted an invalid option") 
            init()
 
+
 def login():
-    
+
     print("*******Login*******")
 
-    accountNumberFromUser = (input("What is your Account Number? \n"))
-
+    accountNumberFromUser = (input("What is Your Account Number?\n"))
+    
     isValidAccountNumber = validation.accountNumberValidation(accountNumberFromUser)
-
+    
     if isValidAccountNumber:
 
-        password = input("What is your password? \n")
+        password = input("What is your password?\n")
 
-
-        for accountNumberFromUser,userDetails in database.items():
-            if (accountNumber == accountNumberFromUser):
-                if (userDetails[3] == password):
-                    bankOperations(userDetails)
     
-   
+
+        for accountNumber,userDetails in database.items():
+            
+            if(str(accountNumber) == accountNumberFromUser):
+                if(userDetails[3] == password):
+                    bankOperation(userDetails)
+
 
         print("Invalid account or password")
-        login() 
+        login()
 
     else:
         init()
- 
 
-
-
-
+    
 
 def register():
     
@@ -81,7 +78,9 @@ def register():
  
     accountNumber = generationAccountNumber()
 
-    database[accountNumber] = [first_name, last_name, email, password]
+    database[accountNumber] = [first_name, last_name, email, password,0]
+    print(database)
+
 
     print("Your Account has been Created")
     print(" == === ====== ===")
@@ -90,9 +89,8 @@ def register():
     print(" == === ====== ===== ===")
     login()
 
-def bankOperations(user):
+def bankOperation(user):
 
-    
     print("welcome %s %s " % (user [0],user[1]))
     
     print('1. Deposit')
@@ -116,7 +114,7 @@ def bankOperations(user):
     else:
 
         print("Invalid Transaction selected")
-        bankOperations(user)
+        bankOperation(user)
 
 def withdrawalOperation():
     print("How much would you like to withdraw? \n") 

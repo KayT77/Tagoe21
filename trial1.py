@@ -132,3 +132,193 @@
 #finally:
   #f.close()
 
+                                 #OOP
+
+##class Car :
+  
+  #def _init_ (self, name, color):
+      
+      #self.model = name
+      #self.color = color 
+
+  #def my_Car(self):
+    #print("My car's model is", self.model) 
+
+  #myCar1 = Car ("BMW", "White")
+  #myCar1.model = "Toyota" 
+  #myCar1.my_Car() 
+
+
+
+class Person :
+  
+  def __init__(self, fname, lname):
+    self.firstname =fname
+    self.lastname =lname
+
+  def printname(self):
+   
+   print(self.firstname,self.lastname)
+
+
+x = Person("Kelvin" ,"Tagoe")
+
+x.printname()
+
+
+
+
+
+
+
+class Person :
+  
+  def __init__(self, fname, lname):
+    self.firstname =fname
+    self.lastname =lname
+
+  def printname(self):
+   
+   print(self.firstname,self.lastname)
+
+# create a child  
+
+class Student(Person):
+  
+  pass 
+
+
+x = Person("Kelvin" ,"Tagoe")
+
+x.printname()
+
+
+
+
+# the super() function makes the child inherit everything from the paerent.
+# the _init_() function when used makes the child no longer inherit the parent, it causes an override
+# properties can be added to the child same way properties was added to the parents 
+# methods can be defined in the child class just like the parent class 
+#Refer to slides 
+
+                                #Super Function                   
+class Person:
+
+  def __init__(self, fname, lname):
+
+    self.firstname = fname
+
+    self.lastname = lname
+
+ 
+
+  def printname(self):
+
+    print(self.firstname, self.lastname)
+
+ 
+
+class Student(Person):
+
+  def __init__(self, fname, lname):
+
+    super().__init__(fname, lname)
+
+ 
+
+myStudent = Student("Mike", "Olsen")
+
+myStudent.printname()
+
+
+
+
+
+
+                           #methods
+class Person:
+
+  def __init__(self, fname, lname):
+
+    self.firstname = fname
+
+    self.lastname = lname
+
+ 
+
+  def printname(self):
+
+    print(self.firstname, self.lastname)
+
+ 
+
+class Student(Person):
+
+  def __init__(self, fname, lname,age,gender):
+
+    super().__init__(fname, lname)
+
+    self.age = age
+
+    self.gender = gender
+
+ 
+
+myStudent = Student("Mike", "Olsen", 29,"male" )
+
+print(myStudent.age, ",",myStudent.gender)
+
+
+
+
+
+
+
+            #methods 
+class Person:
+
+  def __init__(self, fname, lname):
+
+    self.firstname = fname
+
+    self.lastname = lname
+
+ 
+
+  def printname(self):
+
+    print(self.firstname, self.lastname)
+
+ 
+
+class Student(Person):
+
+  def __init__(self, fname, lname,age, gender):
+
+    super().__init__(fname, lname)
+
+    self.age = age
+
+    self.gender = gender
+
+  def student_profile(self):
+
+    print("The student profile is listed below")
+
+    print("Firstname- ", self.firstname)
+
+    print("Lastname - ", self.lastname)
+
+    print("Age - ", self.age)
+
+    print("Gender - ", self.gender)
+
+ 
+
+ 
+
+x = Student("Mike", "Olsen",24,"male")
+
+x.student_profile()
+
+
