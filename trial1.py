@@ -150,47 +150,46 @@
 
 
 
-class Person :
-  
-  def __init__(self, fname, lname):
-    self.firstname =fname
-    self.lastname =lname
+# def __init__(self, fname, lname):
+ 
+    #self.firstname =fname
+    #self.lastname =lname
 
-  def printname(self):
+  #def printname(self):
    
-   print(self.firstname,self.lastname)
+  #print(self.firstname,self.lastname)
 
 
-x = Person("Kelvin" ,"Tagoe")
+#x = Person("Kelvin" ,"Tagoe")
 
-x.printname()
-
-
-
+#x.printname()
 
 
 
 
-class Person :
+
+
+
+#class Person :
   
-  def __init__(self, fname, lname):
-    self.firstname =fname
-    self.lastname =lname
+  #def __init__(self, fname, lname):
+    #self.firstname =fname
+    #self.lastname =lname
 
-  def printname(self):
+  #def printname(self):
    
-   print(self.firstname,self.lastname)
+  #print(self.firstname,self.lastname)
 
 # create a child  
 
-class Student(Person):
+#class Student(Person):
   
   pass 
 
 
-x = Person("Kelvin" ,"Tagoe")
+#x = Person("Kelvin" ,"Tagoe")
 
-x.printname()
+#x.printname()
 
 
 
@@ -202,33 +201,33 @@ x.printname()
 #Refer to slides 
 
                                 #Super Function                   
-class Person:
+#class Person:
 
-  def __init__(self, fname, lname):
+  #def __init__(self, fname, lname):
 
-    self.firstname = fname
+    #self.firstname = fname
 
-    self.lastname = lname
-
- 
-
-  def printname(self):
-
-    print(self.firstname, self.lastname)
+    #self.lastname = lname
 
  
 
-class Student(Person):
+  #def printname(self):
 
-  def __init__(self, fname, lname):
-
-    super().__init__(fname, lname)
+  #print(self.firstname, self.lastname)
 
  
 
-myStudent = Student("Mike", "Olsen")
+#class Student(Person):
 
-myStudent.printname()
+  #def __init__(self, fname, lname):
+
+  #super().__init__(fname, lname)
+
+ 
+
+#myStudent = Student("Mike", "Olsen")
+
+#myStudent.printname()
 
 
 
@@ -236,37 +235,31 @@ myStudent.printname()
 
 
                            #methods
-class Person:
 
-  def __init__(self, fname, lname):
+#def __init__(self, fname, lname):
 
-    self.firstname = fname
+  
+  #self.firstname =fname
+  #self.lasttname =lname
+ 
 
-    self.lastname = lname
+  #def printname(self):
+
+  #class Student(Person):
+
+  #def __init__(self, fname, lname,age,gender):
+
+    #super().__init__(fname, lname)
+
+    #self.age = age
+
+    #self.gender = gender
 
  
 
-  def printname(self):
+#myStudent = Student("Mike", "Olsen", 29,"male" )
 
-    print(self.firstname, self.lastname)
-
- 
-
-class Student(Person):
-
-  def __init__(self, fname, lname,age,gender):
-
-    super().__init__(fname, lname)
-
-    self.age = age
-
-    self.gender = gender
-
- 
-
-myStudent = Student("Mike", "Olsen", 29,"male" )
-
-print(myStudent.age, ",",myStudent.gender)
+#print(myStudent.age, ",",myStudent.gender)
 
 
 
@@ -275,50 +268,50 @@ print(myStudent.age, ",",myStudent.gender)
 
 
             #methods 
-class Person:
+#class Person:
 
-  def __init__(self, fname, lname):
+  #def __init__(self, fname, lname):
 
-    self.firstname = fname
+    #self.firstname = fname
 
-    self.lastname = lname
-
- 
-
-  def printname(self):
-
-    print(self.firstname, self.lastname)
+    #self.lastname = lname
 
  
 
-class Student(Person):
+  #def printname(self):
 
-  def __init__(self, fname, lname,age, gender):
+    #print(self.firstname, self.lastname)
 
-    super().__init__(fname, lname)
+ 
 
-    self.age = age
+#class Student(Person):
 
-    self.gender = gender
+  #def __init__(self, fname, lname,age, gender):
 
-  def student_profile(self):
+    #super().__init__(fname, lname)
 
-    print("The student profile is listed below")
+    #self.age = age
 
-    print("Firstname- ", self.firstname)
+    #self.gender = gender
 
-    print("Lastname - ", self.lastname)
+  #def student_profile(self):
 
-    print("Age - ", self.age)
+    #print("The student profile is listed below")
 
-    print("Gender - ", self.gender)
+    #print("Firstname- ", self.firstname)
+
+    #print("Lastname - ", self.lastname)
+
+    #print("Age - ", self.age)
+
+    #print("Gender - ", self.gender)
 
  
 
  
 
-x = Student("Mike", "Olsen",24,"male")
+#x = Student("Mike", "Olsen",24,"male")
 
-x.student_profile()
+#x.student_profile()
 
 

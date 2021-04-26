@@ -17,16 +17,22 @@ class Category:
 
     
     def checkBalance(self, amount):
-        pass
+        if amount <= self.amount:
+            return True 
+        else :
+            return False
 
 
     def Withdrawal(self, amount):
         self.amount -= amount 
         return "You have successfully withdrawn {} from {} category".format (amount, self.category)
-
+        
 
     def Transfer(self, amount, category):
-        pass
+        if self.checkBalance(amount) is True:
+            return self.Withdrawal(amount) + ' ' + category.deposit(amount)
+        else:
+            "You don't have enough funds in " + self.category + " to transfer"
 
 
 foodCategory = Category ("food", 400)
@@ -38,5 +44,7 @@ carCategory = Category ("car", 700)
 
 print(foodCategory.deposit(200))
 print(foodCategory.budgetBalance())
+print(foodCategory.checkBalance(600))
 print(vacationCategory.Withdrawal(300))
 print(vacationCategory.budgetBalance())
+print(carCategory.Transfer(400, vacationCategory))
